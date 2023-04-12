@@ -94,6 +94,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="blurView" destination="OuY-nG-tal" id="6Gk-Gg-2BL"/>
                         <outlet property="falseButton" destination="fSy-pE-m9W" id="NOi-jC-LMN"/>
                         <outlet property="popUpView" destination="XMc-mG-SAy" id="4fH-si-G9V"/>
                         <outlet property="progressBar" destination="ele-VL-5DL" id="Ve2-v0-h1Q"/>
@@ -107,7 +108,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9r-yJ-kM7">
-                            <rect key="frame" x="0.0" y="28" width="407" height="80"/>
+                            <rect key="frame" x="15" y="28" width="377" height="80"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="mo9-41-fTB"/>
                             </constraints>
@@ -127,6 +128,9 @@
                                     <real key="value" value="20"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dn9-ao-Ls5"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You`ve done it!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoM-pV-x8c">
                             <rect key="frame" x="10" y="5" width="387" height="18"/>
@@ -138,8 +142,8 @@
                     <viewLayoutGuide key="safeArea" id="EJG-Qf-56r"/>
                     <color key="backgroundColor" red="0.21852836010000001" green="0.24981760980000001" blue="0.64516150949999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstItem="R9r-yJ-kM7" firstAttribute="leading" secondItem="EJG-Qf-56r" secondAttribute="leading" id="Aua-H5-7th"/>
-                        <constraint firstItem="EJG-Qf-56r" firstAttribute="trailing" secondItem="R9r-yJ-kM7" secondAttribute="trailing" id="SAc-T1-pr6"/>
+                        <constraint firstItem="R9r-yJ-kM7" firstAttribute="leading" secondItem="EJG-Qf-56r" secondAttribute="leading" constant="15" id="Aua-H5-7th"/>
+                        <constraint firstItem="EJG-Qf-56r" firstAttribute="trailing" secondItem="R9r-yJ-kM7" secondAttribute="trailing" constant="15" id="SAc-T1-pr6"/>
                         <constraint firstItem="NoM-pV-x8c" firstAttribute="leading" secondItem="EJG-Qf-56r" secondAttribute="leading" constant="10" id="Sav-bN-1Sm"/>
                         <constraint firstItem="NoM-pV-x8c" firstAttribute="top" secondItem="XMc-mG-SAy" secondAttribute="top" constant="5" id="YTV-4X-n8z"/>
                         <constraint firstItem="EJG-Qf-56r" firstAttribute="trailing" secondItem="NoM-pV-x8c" secondAttribute="trailing" constant="10" id="aPh-bx-wuo"/>
@@ -147,6 +151,15 @@
                         <constraint firstItem="EJG-Qf-56r" firstAttribute="bottom" secondItem="R9r-yJ-kM7" secondAttribute="bottom" constant="20" id="jft-vW-pfc"/>
                     </constraints>
                 </view>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" id="OuY-nG-tal">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="P5E-Tn-9ko">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="regular"/>
+                </visualEffectView>
             </objects>
             <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
         </scene>
