@@ -95,12 +95,58 @@
                     </view>
                     <connections>
                         <outlet property="falseButton" destination="fSy-pE-m9W" id="NOi-jC-LMN"/>
+                        <outlet property="popUpView" destination="XMc-mG-SAy" id="4fH-si-G9V"/>
                         <outlet property="progressBar" destination="ele-VL-5DL" id="Ve2-v0-h1Q"/>
                         <outlet property="questionField" destination="hTV-pD-4Mj" id="Mfa-Gn-kIn"/>
                         <outlet property="trueButton" destination="Sme-vT-CPn" id="2UT-6P-yit"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="XMc-mG-SAy">
+                    <rect key="frame" x="0.0" y="0.0" width="407" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9r-yJ-kM7">
+                            <rect key="frame" x="0.0" y="28" width="407" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="mo9-41-fTB"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Reset">
+                                <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                            </buttonConfiguration>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="7"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="0.21852836010000001" green="0.36969117569999999" blue="0.64516150949999995" alpha="0.70725982870000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You`ve done it!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoM-pV-x8c">
+                            <rect key="frame" x="10" y="5" width="387" height="18"/>
+                            <fontDescription key="fontDescription" name="DamascusMedium" family="Damascus" pointSize="30"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="EJG-Qf-56r"/>
+                    <color key="backgroundColor" red="0.21852836010000001" green="0.24981760980000001" blue="0.64516150949999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="R9r-yJ-kM7" firstAttribute="leading" secondItem="EJG-Qf-56r" secondAttribute="leading" id="Aua-H5-7th"/>
+                        <constraint firstItem="EJG-Qf-56r" firstAttribute="trailing" secondItem="R9r-yJ-kM7" secondAttribute="trailing" id="SAc-T1-pr6"/>
+                        <constraint firstItem="NoM-pV-x8c" firstAttribute="leading" secondItem="EJG-Qf-56r" secondAttribute="leading" constant="10" id="Sav-bN-1Sm"/>
+                        <constraint firstItem="NoM-pV-x8c" firstAttribute="top" secondItem="XMc-mG-SAy" secondAttribute="top" constant="5" id="YTV-4X-n8z"/>
+                        <constraint firstItem="EJG-Qf-56r" firstAttribute="trailing" secondItem="NoM-pV-x8c" secondAttribute="trailing" constant="10" id="aPh-bx-wuo"/>
+                        <constraint firstItem="R9r-yJ-kM7" firstAttribute="top" secondItem="NoM-pV-x8c" secondAttribute="bottom" constant="5" id="eH5-ka-s1L"/>
+                        <constraint firstItem="EJG-Qf-56r" firstAttribute="bottom" secondItem="R9r-yJ-kM7" secondAttribute="bottom" constant="20" id="jft-vW-pfc"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
         </scene>

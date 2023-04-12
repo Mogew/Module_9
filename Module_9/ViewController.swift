@@ -42,6 +42,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var falseButton: UIButton!
     @IBOutlet weak var trueButton: UIButton!
+    @IBOutlet weak var popUpView: UIView!
+    
     let quiz = [
         "Four + Two is equal Six",
         "Five - Three is greater than One",
@@ -51,9 +53,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         updateUI()
         
+        popUpView.bounds = CGRect(x: 0, y: 0, width: self.view.bounds.width * 0.9, height: self.view.bounds.height * 0.4)
     }
 
     @IBAction func answerButtonPressed(_ sender: UIButton) {
@@ -73,6 +75,22 @@ class ViewController: UIViewController {
         print("!")
         trueButton.isEnabled = false
         falseButton.isEnabled = false
+        animateIn(desiredView: popUpView)
+    }
+    
+    
+    func animateIn (desiredView: UIView) {
+        //add newView to the screen
+        self.view.addSubview(desiredView)
+        // set the view size to 120%
+        desiredView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        desiredView.alpha = 0
+        desiredView.center = self.view.center
+        // animate effect (make it 100% size of view after 0.3 sec)
+        UIView.animate(withDuration: 0.3, animations: {
+            desiredView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            desiredView.alpha = 1
+        })
     }
 }
 
