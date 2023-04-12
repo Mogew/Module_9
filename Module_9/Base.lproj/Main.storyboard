@@ -16,17 +16,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Hip-tc-UqC">
-                                <rect key="frame" x="20" y="48" width="374" height="814"/>
+                                <rect key="frame" x="20" y="48" width="374" height="809"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTV-pD-4Mj">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="620"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="615"/>
                                         <fontDescription key="fontDescription" name="DamascusMedium" family="Damascus" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sme-vT-CPn">
-                                        <rect key="frame" x="0.0" y="628" width="374" height="80"/>
-                                        <color key="backgroundColor" red="0.60743349790000001" green="0.11017373950000001" blue="0.1222986355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="623" width="374" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="mCG-PN-Nuc"/>
                                         </constraints>
@@ -36,9 +35,20 @@
                                             <backgroundConfiguration key="background"/>
                                             <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                         </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.21852836010000001" green="0.36969117568143067" blue="0.64516150949999995" alpha="0.70725982868118786" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSy-pE-m9W">
-                                        <rect key="frame" x="0.0" y="716" width="374" height="80"/>
+                                        <rect key="frame" x="0.0" y="711" width="374" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="NJb-26-A82"/>
                                         </constraints>
@@ -47,9 +57,20 @@
                                         <buttonConfiguration key="configuration" style="plain" title="False">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                         </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.21852836010000001" green="0.36969117569999999" blue="0.64516150949999995" alpha="0.70725982870000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ele-VL-5DL">
-                                        <rect key="frame" x="0.0" y="804" width="374" height="10"/>
+                                        <rect key="frame" x="0.0" y="799" width="374" height="10"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="ePb-bU-Fs1"/>
                                         </constraints>
@@ -62,7 +83,7 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Hip-tc-UqC" secondAttribute="trailing" id="1ct-IY-eon"/>
                             <constraint firstItem="Hip-tc-UqC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Oiu-wu-vSr"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Hip-tc-UqC" secondAttribute="bottom" id="gZe-c3-tCl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Hip-tc-UqC" secondAttribute="bottom" constant="5" id="gZe-c3-tCl"/>
                             <constraint firstItem="Hip-tc-UqC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qLm-GD-kO5"/>
                         </constraints>
                     </view>
