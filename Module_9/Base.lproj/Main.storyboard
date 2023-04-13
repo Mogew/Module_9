@@ -46,6 +46,9 @@
                                                 <color key="value" red="0.21852836010000001" green="0.36969117568143067" blue="0.64516150949999995" alpha="0.70725982868118786" colorSpace="custom" customColorSpace="sRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hgk-cK-wkj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSy-pE-m9W">
                                         <rect key="frame" x="0.0" y="711" width="374" height="80"/>
@@ -68,6 +71,9 @@
                                                 <real key="value" value="7"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ir-JT-nfc"/>
+                                        </connections>
                                     </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ele-VL-5DL">
                                         <rect key="frame" x="0.0" y="799" width="374" height="10"/>
@@ -87,6 +93,9 @@
                             <constraint firstItem="Hip-tc-UqC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="qLm-GD-kO5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="questionLabel" destination="hTV-pD-4Mj" id="d2F-Fy-bg5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
