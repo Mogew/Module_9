@@ -71,12 +71,11 @@ class ViewController: UIViewController {
 
     func updateUI() {
     
-        var timer = Timer.scheduledTimer(withTimeInterval: 0.6, repeats: false) { _ in
+        
             self.falseButton.backgroundColor = .clear
             self.trueButton.backgroundColor = .clear
             self.questionLabel.text = self.quiz[self.questionNumber].questionText
             self.progressBar.progress += (1.0 / Float(self.quiz.count))
-        }
 
     }
 
@@ -94,11 +93,15 @@ class ViewController: UIViewController {
         guard questionNumber < quiz.endIndex - 1
         else {
             questionNumber = 0
-            viewDidLoad()
+            var _ = Timer.scheduledTimer(withTimeInterval: 0.6, repeats: false) { _ in
+                self.viewDidLoad()
+            }
             return
         }
         questionNumber += 1
-        updateUI()
+        var _ = Timer.scheduledTimer(withTimeInterval: 0.6, repeats: false) { _ in
+            self.updateUI()
+        }
     }
 }
 
