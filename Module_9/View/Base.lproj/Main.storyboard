@@ -19,11 +19,37 @@
                                 <rect key="frame" x="20" y="48" width="374" height="809"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTV-pD-4Mj">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="615"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="527"/>
                                         <fontDescription key="fontDescription" name="DamascusMedium" family="Damascus" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNl-0t-NjQ">
+                                        <rect key="frame" x="0.0" y="535" width="374" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="ROT-Mo-CRo"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Choice 1">
+                                            <backgroundConfiguration key="background"/>
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="7"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.21852836010000001" green="0.36969117569999999" blue="0.64516150949999995" alpha="0.70725982870000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ns7-qB-2dU"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sme-vT-CPn">
                                         <rect key="frame" x="0.0" y="623" width="374" height="80"/>
                                         <constraints>
@@ -31,7 +57,7 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="True">
+                                        <buttonConfiguration key="configuration" style="plain" title="Choice 2">
                                             <backgroundConfiguration key="background"/>
                                             <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                         </buttonConfiguration>
@@ -47,7 +73,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hgk-cK-wkj"/>
+                                            <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VyE-hS-WfD"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSy-pE-m9W">
@@ -57,7 +83,7 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="False">
+                                        <buttonConfiguration key="configuration" style="plain" title="Choice 3">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
                                         </buttonConfiguration>
                                         <userDefinedRuntimeAttributes>
@@ -72,7 +98,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ir-JT-nfc"/>
+                                            <action selector="answerButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L3x-gm-Y93"/>
                                         </connections>
                                     </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ele-VL-5DL">
@@ -95,13 +121,14 @@
                     </view>
                     <connections>
                         <outlet property="blurView" destination="vVv-8k-5hO" id="ZbE-RY-Udi"/>
-                        <outlet property="falseButton" destination="fSy-pE-m9W" id="SiW-YT-yte"/>
+                        <outlet property="choice1" destination="JNl-0t-NjQ" id="Vml-uQ-k7F"/>
+                        <outlet property="choice2" destination="Sme-vT-CPn" id="poh-Ia-vec"/>
+                        <outlet property="choice3" destination="fSy-pE-m9W" id="fnj-B7-j2P"/>
                         <outlet property="popUpText" destination="vsq-M4-YcG" id="WTK-zX-cec"/>
                         <outlet property="popUpView" destination="ouZ-qM-wJ2" id="p2e-ju-ugJ"/>
                         <outlet property="progressBar" destination="ele-VL-5DL" id="IGh-9w-nFq"/>
                         <outlet property="questionLabel" destination="hTV-pD-4Mj" id="d2F-Fy-bg5"/>
                         <outlet property="resetButton" destination="0hj-cR-8If" id="J1W-xI-M0w"/>
-                        <outlet property="trueButton" destination="Sme-vT-CPn" id="SNH-fr-xlf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

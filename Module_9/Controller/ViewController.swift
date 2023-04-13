@@ -2,8 +2,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var trueButton: UIButton!
-    @IBOutlet weak var falseButton: UIButton!
+    
+    @IBOutlet weak var choice1: UIButton!
+    @IBOutlet weak var choice2: UIButton!
+    @IBOutlet weak var choice3: UIButton!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var popUpText: UILabel!
@@ -22,9 +24,11 @@ class ViewController: UIViewController {
 
     func updateUI() {
         
-        falseButton.backgroundColor = .clear
-        trueButton.backgroundColor = .clear
         questionLabel.text = quizModel.getQuestionText()
+        
+        choice1.setTitle(quizModel.getButtonText(numberOfButton: 0), for: .normal)
+        choice2.setTitle(quizModel.getButtonText(numberOfButton: 1), for: .normal)
+        choice3.setTitle(quizModel.getButtonText(numberOfButton: 2), for: .normal)
         progressBar.progress  = quizModel.getProgress()
 
     }
@@ -44,15 +48,24 @@ class ViewController: UIViewController {
         }
         
         var _ = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: false) { _ in
+            sender.backgroundColor = .clear
             self.updateUI()
         }
     }
+    
+    
+    
     @IBAction func resetButtonPressed(_ sender: UIButton) {
         quizModel.restart()
         updateUI()
+        choice1.backgroundColor = .clear
+        choice2.backgroundColor = .clear
+        choice3.backgroundColor = .clear
         animateOut(desiredView: popUpView)
         animateOut(desiredView: blurView)
     }
+    
+    // animation
     func animateIn (desiredView: UIView) {
         //add newView to the screen
         self.view.addSubview(desiredView)
