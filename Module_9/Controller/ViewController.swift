@@ -29,6 +29,7 @@ class ViewController: UIViewController {
 
     }
 
+
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         let userAnswer = (sender.titleLabel?.text)!
         // checkAnswer return color of button
@@ -37,14 +38,42 @@ class ViewController: UIViewController {
         guard quizModel.isNextQuestionAppear()
         else {
             popUpText.text = "Your score is \(quizModel.correctAnswers) / \(quizModel.quiz.count)"
-            self.view.addSubview(blurView)
-            self.view.addSubview(popUpView)
+            animateIn(desiredView: blurView)
+            animateIn(desiredView: popUpView)
             return
         }
         
         var _ = Timer.scheduledTimer(withTimeInterval: 0.4, repeats: false) { _ in
             self.updateUI()
         }
+    }
+    @IBAction func resetButtonPressed(_ sender: UIButton) {
+        quizModel.restart()
+        updateUI()
+        animateOut(desiredView: popUpView)
+        animateOut(desiredView: blurView)
+    }
+    func animateIn (desiredView: UIView) {
+        //add newView to the screen
+        self.view.addSubview(desiredView)
+        // set the view size to 120%
+        desiredView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        desiredView.alpha = 0
+        desiredView.center = self.view.center
+        // animate effect (make it 100% size of view after 0.3 sec)
+        UIView.animate(withDuration: 0.3, animations: {
+            desiredView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            desiredView.alpha = 1
+        })
+    }
+    
+    func animateOut(desiredView: UIView) {
+        UIView.animate(withDuration: 0.3, animations: {
+            desiredView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+            desiredView.alpha = 0
+        }, completion: { _ in
+            desiredView.removeFromSuperview()
+        })
     }
 }
 

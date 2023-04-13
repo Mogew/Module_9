@@ -134,6 +134,9 @@
                                     <real key="value" value="25"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="resetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UJA-TM-UwT"/>
+                            </connections>
                         </button>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="1nI-kJ-lXA"/>

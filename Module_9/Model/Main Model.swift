@@ -42,4 +42,8 @@ struct QuizModel {
         questionNumber += 1
         return true
     }
+    mutating func restart() {
+        questionNumber = 0
+        correctAnswers = 0
+    }
 }
