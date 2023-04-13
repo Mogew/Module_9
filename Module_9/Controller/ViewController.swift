@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         // we change questionNumber and check if it`s the last question
         guard quizModel.isNextQuestionAppear()
         else {
-            popUpText.text = "Your score is \(quizModel.correctAnswers) / \(quizModel.quiz.count)"
+            popUpText.text = quizModel.getFinalScore()
             animateIn(desiredView: blurView)
             animateIn(desiredView: popUpView)
             return
