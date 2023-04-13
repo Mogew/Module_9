@@ -94,7 +94,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="falseButton" destination="fSy-pE-m9W" id="SiW-YT-yte"/>
+                        <outlet property="progressBar" destination="ele-VL-5DL" id="IGh-9w-nFq"/>
                         <outlet property="questionLabel" destination="hTV-pD-4Mj" id="d2F-Fy-bg5"/>
+                        <outlet property="trueButton" destination="Sme-vT-CPn" id="SNH-fr-xlf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

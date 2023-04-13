@@ -38,8 +38,11 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var trueButton: UIButton!
+    @IBOutlet weak var falseButton: UIButton!
     @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
     
     let quiz = [Question(q: "A slug's blood is green.", a: "True"),
                 Question(q: "Approximately one quarter of human bones are in the feet.", a: "True"),
@@ -58,13 +61,23 @@ class ViewController: UIViewController {
     var questionNumber = 0
     var correctAnswers = 0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        progressBar.progress = 0.0
         updateUI()
+        
     }
 
     func updateUI() {
-        questionLabel.text = quiz[questionNumber].questionText
+    
+        var timer = Timer.scheduledTimer(withTimeInterval: 0.6, repeats: false) { _ in
+            self.falseButton.backgroundColor = .clear
+            self.trueButton.backgroundColor = .clear
+            self.questionLabel.text = self.quiz[self.questionNumber].questionText
+            self.progressBar.progress += (1.0 / Float(self.quiz.count))
+        }
+
     }
 
     @IBAction func answerButtonPressed(_ sender: UIButton) {
@@ -73,8 +86,9 @@ class ViewController: UIViewController {
         
         if userAnswer == actualAnswer {
             correctAnswers += 1
+            sender.backgroundColor = .green
         } else {
-            print("Wrong!")
+            sender.backgroundColor = .red
         }
         
         guard questionNumber < quiz.endIndex - 1
