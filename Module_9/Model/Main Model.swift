@@ -33,12 +33,13 @@ struct QuizModel {
         let progress = (Float(questionNumber + 1) / Float(quiz.count))
         return progress
     }
-    mutating func nextQuestion() {
+    mutating func isNextQuestionAppear() -> Bool {
         guard questionNumber < quiz.endIndex - 1
         else {
             questionNumber = 0
-            return
+            return false
         }
         questionNumber += 1
+        return true
     }
 }
